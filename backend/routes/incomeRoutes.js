@@ -3,11 +3,11 @@ import {addIncome, getIncomes, deleteIncome} from '../controllers/incomeControll
 
 const router = express.Router()
 
-router.post('/add-income', addIncome)
+router.post('/income', addIncome)
 
-router.get('/get-income', getIncomes)
+router.get('/income', getIncomes)
 
-router.delete('/delete-income/:id', deleteIncome)
+router.delete('/income/:id', deleteIncome)
 
 
 
