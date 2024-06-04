@@ -37,7 +37,7 @@ const NavStyle = styled.nav`
     padding: 2rem 1.5rem;
     width: 375px;
     height: 100%;
-    background: rgba(245, 62, 153, .08);
+    background: rgba(102, 78, 236, 0.09);
     border: 3px solid #FFFFFF;
     backdrop-filter: blur(4.5px);
     border-radius: 32px;
@@ -71,6 +71,12 @@ const NavStyle = styled.nav`
         li{
             display: grid;
             grid-template-columns: 40px auto;
+            align-items: center;
+            cursor: pointer;
+            margin: .6rem 0;
+            font-weight: 500;
+            transition: all .3s ease-in-out;
+            color: rgba(34,34,90,0.6);
         }
 
     }
