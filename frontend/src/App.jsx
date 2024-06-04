@@ -1,6 +1,7 @@
 import bg from './img/bg.jpg'
 import styled from 'styled-components';
 import { Main } from './styles/MainStyles';
+import { Navigation } from './Components/Navigation';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
   <AppStyled bg={bg} className="App">
 
     <Main>
-      <h1>Hello</h1>
+      <Navigation />
     </Main>
 
 
