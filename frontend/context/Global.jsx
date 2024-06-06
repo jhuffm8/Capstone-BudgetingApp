@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import axios from 'axios'
 const BASE_URL = `http://localhost:8080/api/`;
 
-export const GlobalContext = createContext(null)
+const GlobalContext = createContext({})
 
 
 
@@ -12,9 +12,8 @@ export const GlobalProvider = ({children}) => {
     const [expenses, setExpenses] = useState([]);
     const [error, setError] = useState(null);
 
-
     const addIncome = async (income) => {
-        const res = await axios.post(`${BASE_URL}income`, income)
+         const res = await axios.post(`${BASE_URL}income`, income)
             .catch((err) => {
                 setError(err.res.data.message)
             })
@@ -22,11 +21,11 @@ export const GlobalProvider = ({children}) => {
 
 
     return (
-        <GlobalContext.Provider value={'hello'}>
+        <GlobalContext.Provider value={{addIncome}}>
             {children}
         </GlobalContext.Provider>
     )
 
-
-
 }
+
+export const useGlobal = () => useContext(GlobalContext)

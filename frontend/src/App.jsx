@@ -6,12 +6,11 @@ import { useState } from "react"
 import { DashBoard } from './Components/Dashboard';
 import { Expenses } from './Components/Expenses';
 import { Income } from './Components/Income';
-import { GlobalContext } from '../context/Global';
 
 function App() {
   const [select, setSelect ] = useState(1)
-  const global  =  GlobalContext;
-  console.log(global._currentValue)
+  // const global  =  GlobalContext;
+  // console.log(global._currentValue)
 
   const displayData = () => {
     switch(select){
