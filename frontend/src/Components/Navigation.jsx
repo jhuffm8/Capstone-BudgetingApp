@@ -2,8 +2,11 @@ import styled from "styled-components"
 import avatar from '../img/avatar.png'
 import { menuItems } from "../utilities/menuItems"
 import { signout } from "../utilities/Icons"
+import { useState } from "react"
 
-export function Navigation() {
+export function Navigation({select, setSelect}) {
+   
+
     return(
         <NavStyle>
             <div className="user-container">
@@ -16,7 +19,8 @@ export function Navigation() {
             <ul className="menu-items">
                 {menuItems.map((item) => {
                     return <li
-                    key={item.id}>
+                    key={item.id} onClick={() => setSelect(item.id)}
+                    className={select === item.id ? 'active': ''}>
                         {item.icon}
                         <span>{item.title}</span>
                     </li>
@@ -78,6 +82,26 @@ const NavStyle = styled.nav`
             transition: all .3s ease-in-out;
             color: rgba(34,34,90,0.6);
         }
+        i{
+            color: rgba(34,34,90,0.6);
+            font-size: 1.4rem;
+            transition: all .3s ease-in-out;
+        }
 
+    }
+    .active{
+        color: rgba(34,34,90,1);
+        i{
+            color: rgba(34,34,90,1);
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            border: #0d0d3a;
+            border-radius: 0 10px 10px 0;
+
+        }
     }
 `;
