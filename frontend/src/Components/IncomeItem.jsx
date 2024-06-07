@@ -7,13 +7,15 @@ export function IncomeItem({
     amount,
     date, 
     category, 
-    description
+    description,
+    deleteItem,
+    indicatorColor,
+    type
     
 }){
     return(
         <IncomeItemStyled>
             <div className="icon">
-
             </div>
             <div className="content">
                 <h5>{title}</h5>

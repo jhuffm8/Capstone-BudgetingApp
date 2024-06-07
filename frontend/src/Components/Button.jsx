@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export function Button({name, icon, onClick, bg, bPad, color, bRad}) {
     return (
         <ButtonStyled style={{
