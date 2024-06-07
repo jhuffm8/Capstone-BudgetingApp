@@ -25,7 +25,7 @@ const addIncome = async (req, res) => {
         res.status(500).json({message: error})
     }
 
-    console.log(income)
+    // console.log(income)
 };
 
 const getIncomes = async (req, res) => {

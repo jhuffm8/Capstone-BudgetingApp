@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         --color-grey: #aaa;
         --color-accent: #F56692;
         --color-delete: #ff0000;
+        --box-shadow: 0px 1px 17px rgba(0,0,0,0.06)
     }
 
     body{

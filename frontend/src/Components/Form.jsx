@@ -3,6 +3,9 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useGlobal } from "../../context/Global";
 import styled from "styled-components";
+import { GlobalStyle } from "../styles/GlobalStyles";
+import { Button } from "./Button";
+import { plus } from "../utilities/Icons";
 
 
 export function Form(){
@@ -72,12 +75,53 @@ export function Form(){
             <textarea name="description" value={description} id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
         </div>
         <div className="submit-btn">
-            <button>Add Income</button>
+            <Button 
+            name={'Add Income'}
+            icon={plus}
+            bPad={'.8rem 1.6rem'}
+            bRad={'30px'}
+            bg={'var(--color-accent'}
+            color={'#fff'}
+
+            />
         </div>
        </FormStyled>
     )
 }
 
 const FormStyled = styled.form`
-    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    input, textarea, select{
+        font-family: inherit;
+        font-size: inherit;
+        outline: none;
+        border: none;
+        padding: .5rem 1.5rem;
+        border-radius: 5px;
+        border: 2px solid #fff;
+        background: transparent;
+        resize: none;
+        box-shadow: var(--box-shadow);
+        color:var(--primary-color2);
+        &::placeholder{
+            color: var(--primary-color2);
+        }
+
+    }
+    .input-control{
+        input{
+            width: 100%;
+        }
+    }
+    .selects{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .submit-btn{
+        button:hover{
+            color: var(--color-green);
+        }
+    }
 `;

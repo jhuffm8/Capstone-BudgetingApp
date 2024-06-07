@@ -3,7 +3,7 @@ import avatar from '../img/avatar.png'
 import { menuItems } from "../utilities/menuItems"
 import { signout } from "../utilities/Icons"
 import { useState } from "react"
-
+import { GlobalStyle } from "../styles/GlobalStyles"
 export function Navigation({select, setSelect}) {
    
 
@@ -59,13 +59,13 @@ const NavStyle = styled.nav`
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0px 1px 17px rgba(0,0,0,0.06)
+            box-shadow: var(--box-shadow)
         }
         h2{
-            color: rgba(34,34,90,1);
+            color:var(--primary-color2);
         }
         p{
-            color: rgba(34,34,90,0.6);
+            color: var( --primary-color3);
         }
     }
     .menu-items{
@@ -80,10 +80,10 @@ const NavStyle = styled.nav`
             margin: .6rem 0;
             font-weight: 500;
             transition: all .3s ease-in-out;
-            color: rgba(34,34,90,0.6);
+            color: var(--primary-color2);
         }
         i{
-            color: rgba(34,34,90,0.6);
+            color:var(--primary-color2);
             font-size: 1.4rem;
             transition: all .3s ease-in-out;
         }
