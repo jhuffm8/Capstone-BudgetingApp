@@ -5,7 +5,7 @@ import { useGlobal } from "../../context/Global";
 import { useEffect } from "react";
 import { IncomeItem } from "./IncomeItem";
 export function Income(){
-    const {addIncome, incomes, getIncomes} = useGlobal()
+    const {addIncome, incomes, getIncomes, deleteIncome} = useGlobal()
     useEffect(() => {
         getIncomes()
     }, [incomes])
@@ -29,6 +29,7 @@ export function Income(){
                                         amount={amount}  date={date}
                                         category={category}
                                         indicatorColor="var(--color-green)"
+                                        deleteItem={deleteIncome}
                              
                              
                                     />
