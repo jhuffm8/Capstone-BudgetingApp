@@ -2,7 +2,8 @@
 import styled from "styled-components"
 import { calender, comment, dollar, trash } from "../utilities/Icons";
 import { Button } from "./Button";
-export function IncomeItem({
+import { DateFormat } from "../utilities/DateFormat";
+export function Item({
     id,
     title,
     amount,
@@ -23,7 +24,7 @@ export function IncomeItem({
                     <div className="inner-content">
                         <div className="text">
                             <p>{dollar} {amount}</p>
-                            <p>{calender} {date}</p>
+                            <p>{calender} {DateFormat(date)}</p>
                             <p>
                                 {comment}
                                 {description}

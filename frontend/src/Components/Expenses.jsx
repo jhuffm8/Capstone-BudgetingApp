@@ -3,7 +3,7 @@ import { InnerLayout } from "../styles/MainStyles";
 import { useGlobal } from "../../context/Global";
 import { useEffect } from "react";
 import { ExpenseForm } from "./ExpenseForm";
-import { IncomeItem } from "./IncomeItem";
+import { Item } from "./Items";
 export function Expenses(){
     const {addExpense, expenses, getExpenses, deleteExpense, totalExpense} = useGlobal()
     useEffect(() => {
@@ -22,14 +22,14 @@ export function Expenses(){
                     <div className="incomes"></div>
                         {expenses.map((expense) => {
                              const {_id, title, amount, date, category, description} = expense
-                             return <IncomeItem 
+                             return <Item 
                                         key={_id}
                                         id={_id}
                                         title={title}
                                         description={description}
                                         amount={amount}  date={date}
                                         category={category}
-                                        indicatorColor="var(--color-green)"
+                                        indicatorColor="red"
                                         deleteItem={deleteExpense}
                              
                              

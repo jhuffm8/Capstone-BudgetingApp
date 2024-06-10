@@ -3,13 +3,12 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useGlobal } from "../../context/Global";
 import styled from "styled-components";
-import { GlobalStyle } from "../styles/GlobalStyles";
 import { Button } from "./Button";
 import { plus } from "../utilities/Icons";
 
 
 export function ExpenseForm(){
-    const {addExpense, getExpenses} = useGlobal()
+    const {addExpense} = useGlobal()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -26,7 +25,6 @@ export function ExpenseForm(){
     const handleSubmit = (e) => {
         e.preventDefault()
         addExpense(inputState)
-        getExpenses()
     }
 
 
@@ -64,10 +62,12 @@ export function ExpenseForm(){
         <div className="selects input-control">
             <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                 <option value="" disabled>Select Option</option>
-                <option value="salary">Salary</option>
-                <option value="freelancing">Freelancing</option>
-                <option value="investments">Investments</option>
-                <option value="stocks">Stocks</option>
+                <option value="Education">Education</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Health">Health</option>
+                <option value="Subscriptions">Subscriptions</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Travel">Travel</option>
                 <option value="other">Other</option>
             </select>
         </div>

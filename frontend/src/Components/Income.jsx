@@ -3,7 +3,7 @@ import { InnerLayout } from "../styles/MainStyles";
 import { Form } from "./Form";
 import { useGlobal } from "../../context/Global";
 import { useEffect } from "react";
-import { IncomeItem } from "./IncomeItem";
+import { Item } from "./Items";
 export function Income(){
     const {addIncome, incomes, getIncomes, deleteIncome, totalIncome} = useGlobal()
     useEffect(() => {
@@ -22,7 +22,7 @@ export function Income(){
                     <div className="incomes"></div>
                         {incomes.map((income) => {
                              const {_id, title, amount, date, category, description} = income
-                             return <IncomeItem 
+                             return <Item 
                                         key={_id}
                                         id={_id}
                                         title={title}
