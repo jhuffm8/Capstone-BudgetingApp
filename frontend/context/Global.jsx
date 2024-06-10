@@ -17,15 +17,16 @@ export const GlobalProvider = ({children}) => {
             .catch((err) => {
                 setError(err.res.data.message)
             })
+            getIncomes()
     }
     const getIncomes = async () => {
         const res = await axios.get(`${BASE_URL}income`)
         setIncomes(res.data)
-        console.log(res.data)
     }
 
     const deleteIncome = async (id) => {
         const res = await axios.delete(`${BASE_URL}income/${id}`)
+        getIncomes()
     }
 
 
