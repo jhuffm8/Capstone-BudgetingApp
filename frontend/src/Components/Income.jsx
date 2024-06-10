@@ -5,7 +5,7 @@ import { useGlobal } from "../../context/Global";
 import { useEffect } from "react";
 import { IncomeItem } from "./IncomeItem";
 export function Income(){
-    const {addIncome, incomes, getIncomes, deleteIncome} = useGlobal()
+    const {addIncome, incomes, getIncomes, deleteIncome, totalIncome} = useGlobal()
     useEffect(() => {
         getIncomes()
     }, [])
@@ -14,6 +14,7 @@ export function Income(){
         <IncomeStyled>
             <InnerLayout>
                 <h1>Income</h1>
+                <h2 className="totalIncome">Total Income:<span>${totalIncome()}</span></h2>
                 <div className="income-content">
                     <div className="form-container">
                         <Form />
@@ -43,6 +44,10 @@ export function Income(){
 const IncomeStyled = styled.div`
     display: flex;
     overflow: auto;
+    .totalIncome{
+        display: flex;
+        justify-content: center;
+    }
     .income-content{
         gap: 2rem;
     }

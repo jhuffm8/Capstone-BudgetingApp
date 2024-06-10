@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useGlobal } from "../../context/Global";
@@ -8,8 +8,8 @@ import { Button } from "./Button";
 import { plus } from "../utilities/Icons";
 
 
-export function Form(){
-    const {addIncome} = useGlobal()
+export function ExpenseForm(){
+    const {addExpense, getExpenses} = useGlobal()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -25,19 +25,20 @@ export function Form(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addIncome(inputState)
+        addExpense(inputState)
+        getExpenses()
     }
 
 
 
     return (
-       <FormStyled onSubmit={handleSubmit}>
+       <ExpenseFormStyled onSubmit={handleSubmit}>
         <div className="input-control">
             <input 
             type="text" 
             value={title}
             name={'title'}
-            placeholder="Income Title"
+            placeholder="Expense Title"
             onChange={handleInput('title')}
             
             />
@@ -47,7 +48,7 @@ export function Form(){
             type="text" 
             value={amount}
             name={'amount'}
-            placeholder="Income Amount"
+            placeholder="Expense Amount"
             onChange={handleInput('amount')}
             />
         </div>
@@ -75,7 +76,7 @@ export function Form(){
         </div>
         <div className="submit-btn">
             <Button 
-            name={'Add Income'}
+            name={'Add Expense'}
             icon={plus}
             bPad={'.8rem 1.6rem'}
             bRad={'30px'}
@@ -85,11 +86,11 @@ export function Form(){
             />
         </div>
         <br />
-       </FormStyled>
+       </ExpenseFormStyled>
     )
 }
 
-const FormStyled = styled.form`
+const ExpenseFormStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: 2rem;
