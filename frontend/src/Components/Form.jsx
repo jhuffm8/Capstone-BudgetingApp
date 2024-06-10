@@ -9,7 +9,7 @@ import { plus } from "../utilities/Icons";
 
 
 export function Form(){
-    const {addIncome} = useGlobal()
+    const {addIncome, getIncomes} = useGlobal()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -84,6 +84,7 @@ export function Form(){
 
             />
         </div>
+        <br />
        </FormStyled>
     )
 }

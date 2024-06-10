@@ -8,7 +8,7 @@ export function Income(){
     const {addIncome, incomes, getIncomes} = useGlobal()
     useEffect(() => {
         getIncomes()
-    }, [])
+    }, [incomes])
 
     return(
         <IncomeStyled>
