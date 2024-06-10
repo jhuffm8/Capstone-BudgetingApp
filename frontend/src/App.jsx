@@ -44,17 +44,19 @@ function App() {
 
 const AppStyled = styled.div`
 height: 100vh;
+width: 100vw;
 background-image: url(${props => props.bg});
 position: relative;
-width:100vw;
 main{
   flex: 1;
   background:  rgba(102, 78, 236, 0.09);
   border: 3px solid #FFFFFF;
   backdrop-filter: blur(4.5px);
   border-radius: 32px;
-  overflow: auto;
   overflow-x: hidden;
+  &::-webkit-scrollbar{
+      width: 0;
+    }
 }
 `;
 

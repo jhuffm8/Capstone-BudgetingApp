@@ -26,7 +26,6 @@ export function Form(){
     const handleSubmit = (e) => {
         e.preventDefault()
         addIncome(inputState)
-        console.log(inputState)
     }
 
 
