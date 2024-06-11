@@ -1,15 +1,17 @@
 import styled from "styled-components"
 import { useGlobal } from "../../context/Global"
-
+import { DateFormat } from "../utilities/DateFormat"
+import { InnerLayout } from "../styles/MainStyles"
 export function History(){
     const {transactionHistory} = useGlobal()
 
     const [...history] = transactionHistory()
     return(
         <HistoryStyled>
+            <InnerLayout>
             <h2>Recent History</h2>
             {history.map((item) => {
-                const {_id, title, amount, type} = item
+                const {_id, title, amount, type, date} = item
                 return (
                     <div key={_id} className="history-item">
                         <p style={{
@@ -22,12 +24,14 @@ export function History(){
                         }}>
                             {
                                 type === 'expense' ? `-${amount}` : `+${amount}`
+
                             }
                         </p>
 
                     </div>
                 )
             })}
+            </InnerLayout>
         </HistoryStyled>
     )
 }
@@ -36,6 +40,11 @@ const HistoryStyled = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    h2{
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+    }
     .history-item{
         background: #FCF6F9;
         border: 2px solid #FFFFFF;
@@ -45,6 +54,7 @@ const HistoryStyled = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 1rem;
     }
 
 `
