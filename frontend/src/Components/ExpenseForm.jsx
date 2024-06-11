@@ -25,6 +25,11 @@ export function ExpenseForm(){
     const handleSubmit = (e) => {
         e.preventDefault()
         addExpense(inputState)
+        setInputState({  title: '',
+        amount: '',
+        date: '',
+        category: '',
+        description: '',})
     }
 
 

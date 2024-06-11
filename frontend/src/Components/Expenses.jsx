@@ -21,7 +21,7 @@ export function Expenses(){
                     </div>
                     <div className="incomes"></div>
                         {expenses.map((expense) => {
-                             const {_id, title, amount, date, category, description} = expense
+                             const {_id, title, amount, date, category, description, type} = expense
                              return <Item 
                                         key={_id}
                                         id={_id}
@@ -29,6 +29,7 @@ export function Expenses(){
                                         description={description}
                                         amount={amount}  date={date}
                                         category={category}
+                                        type={type}
                                         indicatorColor="red"
                                         deleteItem={deleteExpense}
                              

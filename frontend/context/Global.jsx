@@ -65,6 +65,18 @@ export const GlobalProvider = ({children}) => {
        return total
    }
 
+   // total net and transaction history
+   const totalNet = () => {
+    return totalIncome() - totalExpense()
+   }
+
+   const transactionHistory = () => {
+        const history = [...incomes, ...expenses]
+        history.sort((a, b) => {
+            return new Date(b.createdAt) - new Date(a.createdAt)
+        })
+        return history
+   }
 
 
     return (
@@ -78,7 +90,9 @@ export const GlobalProvider = ({children}) => {
             addExpense,
             getExpenses,
             deleteExpense,
-            totalExpense
+            totalExpense,
+            totalNet,
+            transactionHistory
 
         }}>
             {children}

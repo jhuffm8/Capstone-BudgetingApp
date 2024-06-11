@@ -21,7 +21,7 @@ export function Income(){
                     </div>
                     <div className="incomes"></div>
                         {incomes.map((income) => {
-                             const {_id, title, amount, date, category, description} = income
+                             const {_id, title, amount, date, category, description, type} = income
                              return <Item 
                                         key={_id}
                                         id={_id}
@@ -29,6 +29,7 @@ export function Income(){
                                         description={description}
                                         amount={amount}  date={date}
                                         category={category}
+                                        type={type}
                                         indicatorColor="var(--color-green)"
                                         deleteItem={deleteIncome}
                              

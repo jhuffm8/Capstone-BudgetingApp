@@ -6,6 +6,7 @@ import { useState } from "react"
 import { DashBoard } from './Components/Dashboard';
 import { Expenses } from './Components/Expenses';
 import { Income } from './Components/Income';
+import { History } from './Components/TransactionHistory';
 
 function App() {
   const [select, setSelect ] = useState(1)
@@ -17,7 +18,7 @@ function App() {
       case 1:
         return <DashBoard />;
       case 2:
-        return <DashBoard />;
+        return <History />;
       case 3:
         return <Income />;
       case 4:
