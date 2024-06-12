@@ -8,10 +8,9 @@ ChartJs.register(
     LinearScale, // y-axis
     PointElement,// point on graph 
     LineElement,
-    Title,
-    Tooltip, 
-    Legend, 
-    ArcElement // to create arc within lines
+    Title, // for text on top of chart
+    Tooltip, // shows exact data of wac point on chart
+    Legend, // to create arc within lines
 
 )
 export function Chart() {
@@ -34,6 +33,8 @@ export function Chart() {
             ],
             backgroundColor: 'green',
             tension: .2,
+            pointStyle: 'rectRot',
+            radius: 5
 
           },
           { 
