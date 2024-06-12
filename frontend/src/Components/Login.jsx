@@ -2,8 +2,6 @@ import styled from "styled-components"
 import { Main } from "../styles/MainStyles"
 import { useState } from "react"
 import { Button } from "./Button"
-import { doSignInUser, doSignInWithGoogle } from "../firebase/auth"
-import { useAuth } from "../context/authContext"
 export function Login(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
