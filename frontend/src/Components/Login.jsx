@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Main } from "../styles/MainStyles"
 import { useState } from "react"
-
+import { Button } from "./Button"
 import { doSignInUser, doSignInWithGoogle } from "../firebase/auth"
 import { useAuth } from "../context/authContext"
 export function Login(){
@@ -28,6 +28,18 @@ export function Login(){
                     placeholder="Password"
                 />
                 </div>
+                <br />
+                <div className="submit-btn">
+                    <Button 
+                    name={'Enter'}
+                    bPad={'.8rem 1.6rem'}
+                    bRad={'30px'}
+                    bg={'var(--color-accent'}
+                    color={'#fff'}
+
+                        />
+                </div>
+        
             </div>
         </LoginStyled>
     )
@@ -64,9 +76,14 @@ const LoginStyled = styled.form`
         }
 
     }
-    .input-control{
-        input{
-            width: 100%;
+    .submit-btn{
+        display: flex;
+        justify-content: center;
+        button{
+            box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+            &:hover{
+                background: var(--color-green) !important;
+            }
         }
     }
 `
