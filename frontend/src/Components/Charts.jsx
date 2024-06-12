@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import { useGlobal } from '../context/Global';
 import { DateFormat } from "../utilities/DateFormat";
 ChartJs.register(
-    CategoryScale, 
-    LinearScale, 
-    PointElement,
+    CategoryScale, // x-axis
+    LinearScale, // y-axis
+    PointElement,// point on graph 
     LineElement,
     Title,
     Tooltip, 
     Legend, 
-    ArcElement
+    ArcElement // to create arc within lines
 
 )
 export function Chart() {
@@ -20,7 +20,9 @@ export function Chart() {
         labels: incomes.map((income) => {
             const {date} = income
             return DateFormat(date)
-        }),
+        })
+       
+        ,
         datasets: [
           { 
             label: 'Income',
