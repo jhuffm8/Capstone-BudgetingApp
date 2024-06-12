@@ -10,7 +10,7 @@ import { History } from './Components/TransactionHistory';
 import { Login } from './Components/Login';
 
 function App() {
-  const [select, setSelect ] = useState(1)
+  const [select, setSelect ] = useState()
   // const global  =  GlobalContext;
   // console.log(global._currentValue)
 

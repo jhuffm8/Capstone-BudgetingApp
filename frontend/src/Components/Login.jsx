@@ -1,44 +1,72 @@
 import styled from "styled-components"
-import { InnerLayout, Main } from "../styles/MainStyles"
+import { Main } from "../styles/MainStyles"
+import { useState } from "react"
 
+import { doSignInUser, doSignInWithGoogle } from "../firebase/auth"
+import { useAuth } from "../context/authContext"
 export function Login(){
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [isSigningIn, setIsSigningIn] = useState(false)
+
     return (
         <LoginStyled>
-            <Main>
-                <div className="login-con">
-                    <h1>Login</h1>
-                    <form action="" className="login">
-                        <label><h5>Email</h5>
-                        <input type="email" />
-                        </label>
-                        <br />
-                        <label>
-                            <h5>Password</h5>
-                            <input type="password"/>
-                        </label>
-                    </form>
+            <div className="login-con">
+                <h1>Login</h1>
+                <div className="login">
+                <input 
+                     type="email" 
+                     name={'email'}
+                    placeholder="Email"
+                />
                 </div>
-            </Main>
+                <br/>
+                <div className="email">
+                <input 
+                     type="password" 
+                     name={'password'}
+                    placeholder="Password"
+                />
+                </div>
+            </div>
         </LoginStyled>
     )
 }
 
-const LoginStyled = styled.div`
+const LoginStyled = styled.form`
     display: flex;
     justify-content: center;
-    align-content: center;
-   .login-con{
-    border: 10px;
-    background: #ffffff2d;
-    border-radius: 20px;
-    padding: 20rem;
+    padding-top: 20rem;
+    .login-con{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border: none;
+    }
     h1{
         text-align: center;
+        font-size: 5rem;
     }
-    input{
+    input, textarea{
+        font-family: inherit;
+        font-size: inherit;
+        outline: none;
         border: none;
+        padding: .5rem 1.5rem;
         border-radius: 5px;
-        width: 100%;
+        border: 2px solid #fff;
+        background: transparent;
+        resize: none;
+        box-shadow: var(--box-shadow);
+        color:var(--primary-color2);
+        &::placeholder{
+            color: var(--primary-color2);
+        }
+
     }
-   }
+    .input-control{
+        input{
+            width: 100%;
+        }
+    }
 `
