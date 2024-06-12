@@ -19,7 +19,7 @@ export function DashBoard() {
                 <div className="stats-con">
                 <div className="amount-con">
                             <div className="total-net">
-                                <h2>Total Net</h2>
+                                <h2>Total Net: </h2>
                                 <p>
                                     {dollar} {totalNet()}
                                 </p>
@@ -37,5 +37,19 @@ export function DashBoard() {
 };
 
 const DashBoardStyled = styled.div`
-    
+    .total-net{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1rem;
+
+        h2{
+            font-weight: 7rem;
+            padding-right: 1.05rem;
+        }
+        p{
+            color: green;
+            font-size: 1.75rem;
+            padding-top: .3rem;
+        }
+    }
 `
