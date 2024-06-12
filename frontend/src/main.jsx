@@ -5,11 +5,12 @@ import './index.css'
 import { GlobalStyle } from './styles/GlobalStyles.js'
 import { GlobalProvider } from '../context/Global.jsx'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyle />
     <GlobalProvider>
-      <App />
+       <App />
     </GlobalProvider>
   </React.StrictMode>,
 )

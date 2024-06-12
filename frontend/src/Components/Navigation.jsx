@@ -2,8 +2,7 @@ import styled from "styled-components"
 import avatar from '../img/avatar.png'
 import { menuItems } from "../utilities/menuItems"
 import { signout } from "../utilities/Icons"
-import { useState } from "react"
-import { GlobalStyle } from "../styles/GlobalStyles"
+
 export function Navigation({select, setSelect}) {
    
 
@@ -27,7 +26,7 @@ export function Navigation({select, setSelect}) {
                 })}
             </ul>
             <div className="bottom-nav">
-                <li>
+                <li onClick={() => setSelect()}>
                     {signout} Sign Out
                 </li>
             </div>
@@ -102,6 +101,11 @@ const NavStyle = styled.nav`
             border: #0d0d3a;
             border-radius: 0 10px 10px 0;
 
+        }
+    }
+    .bottom-nav{
+        li{
+            cursor: pointer;
         }
     }
 `;

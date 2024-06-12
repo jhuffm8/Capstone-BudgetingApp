@@ -17,16 +17,17 @@ export function DashBoard() {
             <InnerLayout>
                 <h1>All Transaction</h1>
                 <div className="stats-con">
-                    <div className="chart-con">
-                        <Chart />
-                        <div className="amount-con">
+                <div className="amount-con">
                             <div className="total-net">
-                                <h2>Total Net:</h2>
+                                <h2>Total Net</h2>
                                 <p>
                                     {dollar} {totalNet()}
                                 </p>
 
                             </div>
+                    <div className="chart-con">
+                        <Chart />
+                       
                         </div>
                     </div>
                 </div>

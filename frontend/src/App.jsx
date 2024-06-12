@@ -7,6 +7,7 @@ import { DashBoard } from './Components/Dashboard';
 import { Expenses } from './Components/Expenses';
 import { Income } from './Components/Income';
 import { History } from './Components/TransactionHistory';
+import { Login } from './Components/Login';
 
 function App() {
   const [select, setSelect ] = useState(1)
@@ -23,14 +24,13 @@ function App() {
         return <Income />;
       case 4:
         return <Expenses />;
-
       default:
-        return <DashBoard />
+        return <Login/>
       
     }
   }
 
-  return (
+  return ( 
   <AppStyled bg={bg} className="App">
     <Main>
       <Navigation select={select} setSelect={setSelect} />
@@ -38,7 +38,6 @@ function App() {
         {displayData()}
       </main>
     </Main>
-
   </AppStyled>
   )
 }
