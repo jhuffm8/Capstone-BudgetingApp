@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { InnerLayout } from "../styles/MainStyles"
 import { Chart } from "./Charts"
-import { useGlobal } from "../../context/Global"
+import { useGlobal } from "../context/Global"
 import {dollar} from '../utilities/Icons'
 import { useEffect } from "react"
 

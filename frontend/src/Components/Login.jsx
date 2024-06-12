@@ -6,7 +6,7 @@ export function Login(){
         <LoginStyled>
             <Main>
                 <div className="login-con">
-                    <h2>Login</h2>
+                    <h1>Login</h1>
                     <form action="" className="login">
                         <label><h5>Email</h5>
                         <input type="email" />
@@ -14,7 +14,7 @@ export function Login(){
                         <br />
                         <label>
                             <h5>Password</h5>
-                            <input type="password" />
+                            <input type="password"/>
                         </label>
                     </form>
                 </div>
@@ -29,11 +29,16 @@ const LoginStyled = styled.div`
     align-content: center;
    .login-con{
     border: 10px;
-    background: #ffffff5a;
+    background: #ffffff2d;
     border-radius: 20px;
-    padding: 15rem;
-    h2{
+    padding: 20rem;
+    h1{
         text-align: center;
+    }
+    input{
+        border: none;
+        border-radius: 5px;
+        width: 100%;
     }
    }
 `

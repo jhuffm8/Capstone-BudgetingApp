@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { useGlobal } from "../../context/Global"
+import { useGlobal } from "../context/Global"
 import { DateFormat } from "../utilities/DateFormat"
 import { InnerLayout } from "../styles/MainStyles"
 export function History(){

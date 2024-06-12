@@ -1,9 +1,8 @@
 import {  useState } from "react";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { useGlobal } from "../../context/Global";
+import { useGlobal } from "../context/Global";
 import styled from "styled-components";
-import { GlobalStyle } from "../styles/GlobalStyles";
 import { Button } from "./Button";
 import { plus } from "../utilities/Icons";
 

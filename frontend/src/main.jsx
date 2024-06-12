@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { GlobalStyle } from './styles/GlobalStyles.js'
-import { GlobalProvider } from '../context/Global.jsx'
+import { GlobalProvider } from './context/Global.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

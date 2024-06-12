@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { InnerLayout } from "../styles/MainStyles";
 import { Form } from "./Form";
-import { useGlobal } from "../../context/Global";
+import { useGlobal } from "../context/Global";
 import { useEffect } from "react";
 import { Item } from "./Items";
 export function Income(){

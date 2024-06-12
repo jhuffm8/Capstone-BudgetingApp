@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { InnerLayout } from "../styles/MainStyles";
-import { useGlobal } from "../../context/Global";
+import { useGlobal } from "../context/Global";
 import { useEffect } from "react";
 import { ExpenseForm } from "./ExpenseForm";
 import { Item } from "./Items";

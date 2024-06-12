@@ -1,7 +1,7 @@
 import {Chart as ChartJs, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement} from 'chart.js'
 import {Line} from 'react-chartjs-2';
 import styled from 'styled-components';
-import { useGlobal } from '../../context/Global';
+import { useGlobal } from '../context/Global';
 import { DateFormat } from "../utilities/DateFormat";
 ChartJs.register(
     CategoryScale, 
