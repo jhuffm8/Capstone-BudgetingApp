@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { useGlobal } from '../context/Global';
 import { DateFormat } from "../utilities/DateFormat";
 ChartJs.register(
-    CategoryScale, // x-axis
-    LinearScale, // y-axis
+    CategoryScale, // x-point
+    LinearScale, // y-point
     PointElement,// point on graph 
     LineElement,
     Title, // for text on top of chart

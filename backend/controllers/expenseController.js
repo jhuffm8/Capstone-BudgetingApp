@@ -25,7 +25,6 @@ const addExpense = async (req, res) => {
         res.status(500).json({message: error})
     }
 
-    console.log(expense)
 };
 
 const getExpenses = async (req, res) => {
