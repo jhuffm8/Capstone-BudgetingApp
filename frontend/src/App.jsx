@@ -8,9 +8,10 @@ import { Expenses } from './Components/Expenses';
 import { Income } from './Components/Income';
 import { History } from './Components/TransactionHistory';
 import { Login } from './Components/Login';
+import {Route, Routes} from 'react-router-dom'
 
 function App() {
-  const [select, setSelect ] = useState()
+  const [select, setSelect ] = useState(1)
   // const global  =  GlobalContext;
   // console.log(global._currentValue)
 

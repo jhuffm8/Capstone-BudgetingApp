@@ -1,4 +1,5 @@
 import { dashboard, expenses, transactions, trend } from "./Icons"
+import { Link } from "react-router-dom"
 
 export const menuItems = [
     {
@@ -11,7 +12,7 @@ export const menuItems = [
         id: 2,
         title: "View Transactions",
         icon: transactions,
-        link: "/dashboard"
+        link: "/viewTransaction"
     },
     {
         id: 3,
